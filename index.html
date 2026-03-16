@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radha Study Halls</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6366f1">
+  
+  <!-- iOS PWA meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Radha Halls">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+
+<body>
+
+  <!-- Soft pastel mesh bg -->
+  <div class="page-bg">
+    <div class="blob3"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="8" fill="var(--accent-primary)" />
+        <path d="M7 12L10.5 15.5L18 8" stroke="white" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      Radha<span>Halls</span>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="#enquiry">Enquiry</a>
+      <a href="checkin.html" style="font-weight: 600; color: var(--accent-primary);">Student Check-in</a>
+      <a href="register.html" class="admin-btn">Join Now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-pill">✨ The calmest place to study</div>
+    <h1>Study without <span>overwhelm.</span></h1>
+    <p>We removed the visual noise and discomfort. Just your books, high-speed WiFi, and a deeply focused environment
+      designed to help you succeed.</p>
+
+    <div class="hero-btns">
+      <a href="register.html" class="hero-btn-primary">Book your seat</a>
+      <a href="#contact" class="hero-btn-secondary">Contact us</a>
+    </div>
+  </section>
+
+  <div class="marquee-container">
+    <div class="marquee-text">
+      <span><i>✦</i> Ergonomic Chairs</span>
+      <span><i>✦</i> Lightning Fast WiFi</span>
+      <span><i>✦</i> Silent Zones</span>
+      <span><i>✦</i> 365 Days Access</span>
+      <span><i>✦</i> CCTV Security</span>
+      <span><i>✦</i> Ergonomic Chairs</span>
+      <span><i>✦</i> Lightning Fast WiFi</span>
+      <span><i>✦</i> Silent Zones</span>
+      <span><i>✦</i> 365 Days Access</span>
+      <span><i>✦</i> CCTV Security</span>
+    </div>
+  </div>
+
+  <!-- OUR STORY / ABOUT — appears BEFORE features -->
+  <section id="about" class="section reveal" style="padding-top:0; padding-bottom:40px;">
+    <div class="about-compact">
+      <img src="founder1.png" class="about-compact-img" alt="Founder"
+        onerror="this.src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=300';">
+      <div class="about-compact-text">
+        <div class="section-badge" style="margin-bottom:10px;">👋 Our Story</div>
+        <h2 class="section-title" style="font-size:48px; text-align:left; margin-bottom:16px;">Designed for calm, not
+          chaos.</h2>
+        <p style="color:var(--text-muted); line-height:1.7; font-size:15px;"><strong
+            style="color:var(--text-main);">Traditional study halls feel cramped and stressful.</strong> We built Radha
+          Study Halls differently — removing visual noise, adding ergonomic comfort, and creating a space where deep
+          focus comes naturally.</p>
+        <p style="color:var(--text-muted); line-height:1.7; font-size:15px; margin-top:10px;">Your space. Your peace.
+          Your success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features-section section reveal" id="features">
+    <div class="section-badge">✦ Why choose us</div>
+    <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+    <p class="section-subtitle">We obsessed over every detail so you never have to think about your environment again.
+    </p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #EEF2FF, #E0E7FF);">
+          <span class="feature-icon">❄️</span>
+        </div>
+        <h3>Premium AC Comfort</h3>
+        <p>Temperature-controlled halls at the perfect 22°C so you stay focused, not sweating over deadlines.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #FFF1F2, #FFE4E6);">
+          <span class="feature-icon">⚡</span>
+        </div>
+        <h3>Blazing Fast WiFi</h3>
+        <p>100 Mbps dedicated fibre connection shared across fewer seats so you always get lightning-fast speeds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #F0FDF4, #DCFCE7);">
+          <span class="feature-icon">🔕</span>
+        </div>
+        <h3>Enforced Silence</h3>
+        <p>Strict no-noise policy. No calls, no loud conversations. Just the sound of your own progress.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #FFFBEB, #FEF3C7);">
+          <span class="feature-icon">💡</span>
+        </div>
+        <h3>Optimal Lighting</h3>
+        <p>Warm-white LED panels designed for eye comfort. Study for 10 hours without the headache.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #F5F3FF, #EDE9FE);">
+          <span class="feature-icon">🔒</span>
+        </div>
+        <h3>24/7 CCTV Security</h3>
+        <p>Full-coverage surveillance so your belongings are always safe. Leave your bag and take a break freely.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #FFF0F9, #FCE7F3);">
+          <span class="feature-icon">📱</span>
+        </div>
+        <h3>Smart QR Check-in</h3>
+        <p>Book your seat online and scan your unique QR code to enter. No paperwork, no queues, no hassle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal" style="padding-top:0; padding-bottom:40px; display:none;">
+    <div class="about-compact">
+      <img src="avatar_boy_3d.png" class="about-compact-img" alt="Founder"
+        onerror="this.src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=300';">
+      <div class="about-compact-text">
+        <div class="section-badge" style="margin-bottom:10px;">👋 Our Story</div>
+        <h2 class="section-title" style="font-size:32px; text-align:left; margin-bottom:12px;">Designed for calm, not
+          chaos.</h2>
+        <p style="color:var(--text-muted); line-height:1.7; font-size:15px;"><strong
+            style="color:var(--text-main);">Traditional study halls feel cramped and stressful.</strong> We built Radha
+          Study Halls differently — removing visual noise, adding ergonomic comfort, and creating a space where deep
+          focus comes naturally.</p>
+        <p style="color:var(--text-muted); line-height:1.7; font-size:15px; margin-top:10px;">Your space. Your peace.
+          Your success.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="pricing">
+    <h2 class="section-title">Small steps. Zero guilt.</h2>
+    <p class="section-subtitle">Choose the space that works with your mind, not against it.</p>
+
+    <div class="grid">
+      <div class="card pricing-card">
+        <div class="pricing-badge">🏆 Most Popular</div>
+        <h2>AC Comfort</h2>
+        <div class="card-price">₹1800<span> / month</span></div>
+        <div class="pricing-features">
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">❄️</div>
+            <span>Fully Air Conditioned</span>
+          </div>
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">🪑</div>
+            <span>Premium Seating</span>
+          </div>
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">💎</div>
+            <span>₹5000 / 3 Months</span>
+          </div>
+        </div>
+        <div class="pricing-perks">
+          <div class="pricing-perks-title">Everything included</div>
+          <div class="pricing-perks-grid">
+            <span>⚡ Fast WiFi</span>
+            <span>🔇 Silent Zone</span>
+            <span>🔒 Lockers</span>
+            <span>📅 365-Day Access</span>
+            <span>📌 Personal Seat</span>
+            <span>💡 Study Lighting</span>
+          </div>
+        </div>
+        <a href="register.html" class="pricing-cta-btn">Book Now →</a>
+      </div>
+
+      <div class="card pricing-card pricing-card--alt">
+        <div class="pricing-badge pricing-badge--alt">🌿 Best Value</div>
+        <h2>Breeze Space</h2>
+        <div class="card-price">₹1500<span> / month</span></div>
+        <div class="pricing-features">
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">🌀</div>
+            <span>Natural Ventilation (Fan)</span>
+          </div>
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">🪑</div>
+            <span>Premium Seating</span>
+          </div>
+          <div class="pricing-feature-item">
+            <div class="pricing-feature-icon">💎</div>
+            <span>₹4000 / 3 Months</span>
+          </div>
+        </div>
+        <div class="pricing-perks pricing-perks--alt">
+          <div class="pricing-perks-title">Everything included</div>
+          <div class="pricing-perks-grid">
+            <span>⚡ Fast WiFi</span>
+            <span>🔇 Silent Zone</span>
+            <span>🔒 Lockers</span>
+            <span>📅 365-Day Access</span>
+            <span>📌 Personal Seat</span>
+            <span>💡 Study Lighting</span>
+          </div>
+        </div>
+        <a href="register.html" class="pricing-cta-btn pricing-cta-btn--alt">Book Now →</a>
+      </div>
+
+      <div class="card contact-card" id="contact">
+        <div class="contact-card-header">
+          <div class="contact-card-badge">📬 Contact Us</div>
+          <h2>Get in touch</h2>
+          <p class="contact-subtitle">We are here to help. Anytime.</p>
+        </div>
+        <div class="contact-items">
+          <a href="tel:8978771345" class="contact-item-row">
+            <div class="contact-item-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">8978771345</div>
+            </div>
+          </a>
+          <a href="mailto:radhajamisetty@gmail.com" class="contact-item-row">
+            <div class="contact-item-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">radhajamisetty@gmail.com</div>
+            </div>
+          </a>
+          <div class="contact-item-row">
+            <div class="contact-item-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">📍</div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Chandranagar, Visakhapatnam</div>
+            </div>
+          </div>
+        </div>
+        <!-- Google Maps Embed -->
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.9024756637836!2d83.31!3d17.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39431389e6973f%3A0x92d9f20d8e5a2e16!2sChandranagar%2C%20Visakhapatnam%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="160" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUAL PANE: Enquiry + Review side by side -->
+  <section id="enquiry" class="dual-pane-section section reveal">
+    <div class="dual-pane-wrapper">
+
+      <!-- LEFT: Enquiry form -->
+      <div class="dual-pane-card">
+        <div class="dual-pane-header">
+          <div class="dp-badge">📬 Get in touch</div>
+          <h3>Ready when you are.</h3>
+          <p>Have a question? Drop it here and we'll get back to you.</p>
+        </div>
+        <form id="enquiryForm" class="dp-form">
+          <div class="dp-fields">
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="text" id="phone" placeholder="Phone number" required>
+            <input type="email" id="email" placeholder="Email address" required>
+            <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="dp-submit">Send Message ✨</button>
+        </form>
+      </div>
+
+      <!-- RIGHT: Review form -->
+      <div class="dual-pane-card dp-review-card">
+        <div class="dual-pane-header">
+          <div class="dp-badge">⭐ Share your experience</div>
+          <h3>Loved your time here?</h3>
+          <p>Let others know. Your review helps aspirants find their focus home.</p>
+        </div>
+        <form id="reviewForm" class="dp-form">
+          <div class="dp-fields">
+            <div class="rf-star-row">
+              <span class="rf-label">Your Rating</span>
+              <div class="rf-stars" id="starRating">
+                <span data-val="1">★</span>
+                <span data-val="2">★</span>
+                <span data-val="3">★</span>
+                <span data-val="4">★</span>
+                <span data-val="5">★</span>
+              </div>
+              <input type="hidden" id="reviewRating" value="0">
+            </div>
+            <input type="text" id="reviewName" placeholder="Your name" required>
+            <input type="text" id="reviewRole" placeholder="Your role (e.g. UPSC Aspirant)">
+            <textarea id="reviewText" rows="5" placeholder="Share your honest experience…" required></textarea>
+          </div>
+          <button type="submit" class="dp-submit dp-submit-review">Submit Review →</button>
+          <div id="reviewMsg" style="font-size:13px; margin-top:8px; min-height:18px;"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews" class="section reveal" style="padding-top:40px;">
+    <h2 class="section-title">A quiet impact.</h2>
+    <p class="section-subtitle">Hear from serious aspirants who found their focus.</p>
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="1.png" alt="Student" class="review-avatar">
+          <div>
+            <div class="review-author">Guna K.</div>
+            <div class="review-role">UPSC Aspirant</div>
+          </div>
+        </div>
+        <div class="review-rating">★★★★★</div>
+        <div class="review-text">"The environment here is unlike any other study hall. The silent zones and ergonomic
+          chairs have completely changed my study flow. I no longer feel exhausted after an 8-hour session."</div>
+      </div>
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="2.png" alt="Student" class="review-avatar">
+          <div>
+            <div class="review-author">Jhasu J.</div>
+            <div class="review-role">CA Finalist</div>
+          </div>
+        </div>
+        <div class="review-rating">★★★★★</div>
+        <div class="review-text">"I needed a place with zero distractions and fast internet. Radha Study Halls provides
+          exactly that. The AC comfort and perfectly balanced lighting are a huge plus."</div>
+      </div>
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="3.png" alt="Student" class="review-avatar">
+          <div>
+            <div class="review-author">Tharshith R.</div>
+            <div class="review-role">Medical Student</div>
+          </div>
+        </div>
+        <div class="review-rating">★★★★★</div>
+        <div class="review-text">"Booking a seat online is incredibly easy. I love that I can pick exactly where I want
+          to sit. The 365-day access is a lifesaver for late-night revisions."</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="big-footer">
+    <div class="bf-inner">
+
+      <!-- Brand Column -->
+      <div class="bf-col bf-brand-col">
+        <div class="bf-logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="8" fill="white" fill-opacity="0.15" />
+            <path d="M7 12L10.5 15.5L18 8" stroke="white" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Radha Halls
+        </div>
+        <p class="bf-tagline">The calmest place to study in Vizag. Premium seating, blazing WiFi, 365 days open.</p>
+        <div class="bf-socials">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" class="bf-social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank" class="bf-social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com" target="_blank" class="bf-social-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+              <polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/918978771345" target="_blank" class="bf-social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.553 4.195 1.604 6.014L.43 24l6.101-1.602c1.761 1 3.766 1.53 5.5 1.53 6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm3.568 17.556c-.528 1.488-2.618 2.37-3.767 2.443-1.077.069-2.394-.483-5.26-1.67-3.793-1.57-6.22-5.462-6.409-5.717-.19-.255-1.531-2.039-1.531-3.886 0-1.847.962-2.753 1.302-3.13.34-.378.736-.473.981-.473h.717c.238.01.558-.093.873.665.32.766 1.094 2.673 1.188 2.863.094.19.151.416.019.681-.132.264-.207.425-.415.67-.207.245-.434.542-.622.75-.205.223-.424.463-.183.877.241.414 1.075 1.773 2.308 2.872 1.594 1.42 2.923 1.859 3.32 2.052.396.19.623.151.849-.113.226-.264.981-1.152 1.245-1.549.264-.396.528-.33.886-.198.358.132 2.264 1.067 2.66 1.265.396.198.66.302.755.472.094.17.094.981-.434 2.47z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="bf-col">
+        <h4 class="bf-col-title">Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+
+      <!-- Student Portal -->
+      <div class="bf-col">
+        <h4 class="bf-col-title">Student Portal</h4>
+        <a href="register.html">Book a Seat</a>
+        <a href="checkin.html">Check-in / Out</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="bf-col">
+        <h4 class="bf-col-title">Contact</h4>
+        <a href="tel:+918978771345">📞 8978771345</a>
+        <a href="mailto:radhajamisetty@gmail.com">✉️ Email Us</a>
+        <a href="https://maps.google.com" target="_blank">📍 Chandranagar, Vizag</a>
+      </div>
+
+    </div>
+    <div class="bf-bottom">
+      <span>© 2026 Radha Study Halls · Designed for calm minds.</span>
+      <span>Made with ❤️ in Vizag</span>
+    </div>
+  </footer>
+
+  <!-- Success Modals -->
+  <div id="enquirySuccessModal" class="success-modal">
+    <div class="success-content">
+      <div class="success-icon">✓</div>
+      <h2 style="margin-top:20px;">Message Sent!</h2>
+      <p style="color:var(--text-muted); margin:15px 0 30px;">Thank you for reaching out. We've received your inquiry and
+        will get back to you shortly.</p>
+      <button onclick="closeEnquiryModal()" class="pricing-cta-btn" style="width:100%;">Cool, thanks!</button>
+    </div>
+  </div>
+
+  <div id="reviewSuccessModal" class="success-modal">
+    <div class="success-content">
+      <div class="success-icon" style="background:#FEF3C7; color:#D97706;">⭐</div>
+      <h2 style="margin-top:20px;">Review Shared!</h2>
+      <p style="color:var(--text-muted); margin:15px 0 30px;">Thanks for sharing your experience! Your review helps other
+        aspirants find their focus home.</p>
+      <button onclick="closeReviewModal()" class="pricing-cta-btn" style="width:100%;">You're welcome!</button>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registered', reg))
+          .catch(err => console.log('Service Worker registration failed', err));
+      });
+    }
+  </script>
+</body>
+
+</html>

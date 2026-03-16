@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in - Radha Study Halls</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- iOS PWA meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Radha Halls">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 100px;
+        }
+
+        .checkin-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(25px);
+            border-radius: 36px;
+            padding: 50px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            animation: fadeUp 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .checkin-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            font-family: var(--font-main);
+            font-size: 16px;
+            background: #F8FAFC;
+            outline: none;
+            transition: 0.3s;
+            color: var(--text-main);
+        }
+
+        .input-group input:focus {
+            border-color: var(--accent-primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-group button {
+            flex: 1;
+            padding: 16px;
+            border-radius: 20px;
+            border: none;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .btn-in {
+            background: #10B981;
+        }
+
+        .btn-in:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-out {
+            background: #EF4444;
+        }
+
+        .btn-out:hover {
+            background: #DC2626;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-weight: 500;
+            min-height: 24px;
+            color: var(--text-main);
+        }
+
+        .forgot-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent-primary);
+            font-family: var(--font-main);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+
+        .forgot-link:hover {
+            color: var(--accent-secondary);
+        }
+
+        .recover-section {
+            display: none;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            animation: fadeUp 0.5s ease;
+        }
+
+        .recover-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        #reader {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            display: none;
+            border: 2px solid var(--accent-primary);
+        }
+
+        .scan-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 20px;
+            border: none;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            font-family: var(--font-main);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(129, 140, 248, 0.3);
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .scan-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(129, 140, 248, 0.4);
+        }
+
+        .btn-recover {
+            width: 100%;
+            padding: 16px;
+            border-radius: 20px;
+            border: none;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            background: var(--text-main);
+        }
+
+        .btn-recover:hover {
+            background: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-bg"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="8" fill="var(--accent-primary)" />
+                <path d="M7 12L10.5 15.5L18 8" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Radha<span>Halls</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="checkin-container">
+        <h2>Student Check-in</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Scan your Digital ID Card to check in or out of the
+            study hall.</p>
+
+        <button id="startScanBtn" class="scan-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+                <path d="M12 11v2h2"></path>
+            </svg>
+            Click to Scan QR Code
+        </button>
+
+        <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+        <button id="uploadScanBtn" class="scan-btn" style="display: none; background: linear-gradient(135deg, #10B981, #059669);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            Upload QR Image
+        </button>
+
+        <div id="reader"></div>
+
+        <div class="input-group" style="display: none;" id="manualInputGroup">
+            <label>Student ID (Manual fallback)</label>
+            <input type="text" id="studentId" placeholder="e.g. NSH-1234">
+        </div>
+
+        <div class="btn-group" id="actionBtns" style="display: none;">
+            <button class="btn-in" id="btnIn">Scan to Check In</button>
+            <button class="btn-out" id="btnOut">Scan to Check Out</button>
+        </div>
+
+        <div id="statusMessage" class="message"></div>
+
+        <span class="forgot-link" id="toggleRecover">Forgot your ID?</span>
+
+        <div class="recover-section" id="recoverSection">
+            <h3>Regain your Student ID</h3>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Enter the details you used during
+                registration.</p>
+
+            <div class="input-group">
+                <label>Registered Phone Number</label>
+                <input type="tel" id="recoverPhone" placeholder="e.g. 9876543210">
+            </div>
+            <div class="input-group">
+                <label>Registered Email</label>
+                <input type="email" id="recoverEmail" placeholder="your@email.com">
+            </div>
+
+            <button class="btn-recover" id="btnRecover">Find My ID</button>
+            <div id="recoverMessage" class="message" style="margin-top: 15px;"></div>
+        </div>
+    </div>
+
+    <!-- HTML5 QR Code Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script type="module" src="checkin.js"></script>
+</body>
+
+</html>
