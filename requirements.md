@@ -29,7 +29,17 @@ The project uses MongoDB to store student records and seat management data.
    - **Password:** `OZKU8hxUSxhqdplB`
    - **Connection URL Template:** `mongodb+srv://goudadeepthi04_db_user:OZKU8hxUSxhqdplB@YOUR_CLUSTER_NAME.mongodb.net/radha_study_halls`
 
-## 3. GitHub Integration
+## 3. Backend Hosting (Railway)
+
+The Enquiry form uses a separate backend API to process and store messages.
+
+### Steps:
+1. Create an account on [Railway.app](https://railway.app/).
+2. Deploy your backend code (Node.js/Python) to a new service.
+3. Get the **Generated Domain URL** (e.g., `https://your-backend.up.railway.app`).
+4. Update `index.js` (Line 156) by replacing `YOUR_BACKEND_API_URL` with your Railway URL.
+
+## 4. GitHub Integration
 
 The code is optimized to be pushed to your own GitHub repository.
 
