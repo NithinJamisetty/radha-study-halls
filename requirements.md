@@ -19,11 +19,15 @@ The project uses Firebase for user authentication and hosting.
 The project uses MongoDB to store student records and seat management data.
 
 ### Steps:
+### Steps:
 1. Create an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 2. Create a new cluster and a database named **radha_study_halls**.
 3. Create collections: `users`, `seats`, `enquiries`, `reviews`.
 4. Get your **Connection String** from Atlas.
-5. In your backend environment (or wherever the API points), update the connection string.
+5. In your backend environment, use the following credentials:
+   - **Username:** `goudadeepthi04_db_user`
+   - **Password:** `OZKU8hxUSxhqdplB`
+   - **Connection URL Template:** `mongodb+srv://goudadeepthi04_db_user:OZKU8hxUSxhqdplB@YOUR_CLUSTER_NAME.mongodb.net/radha_study_halls`
 
 ## 3. GitHub Integration
 
