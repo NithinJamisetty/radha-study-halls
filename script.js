@@ -766,32 +766,39 @@ window.confirmDeleteUser = async function () {
 
 async function loadEnquiries() {
   try {
-    const response = await fetch("https://rsh-backend-production.up.railway.app/enquiries");
-    const data = await response.json();
+    const snapshot = await getDocs(collection(db, "enquiries"));
+    const data = [];
+    snapshot.forEach(docSnap => {
+      data.push({ id: docSnap.id, ...docSnap.data() });
+    });
 
     const table = document.getElementById("enquiryTable");
     table.innerHTML = "";
 
-    data.reverse().forEach(item => {
+    // Sort by createdAt desc
+    data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    data.forEach(item => {
       const statusBadge = item.status === "Contacted"
-        ? `<span class="status contacted">✔ Contacted</span>`
-        : `<span class="status pending">Pending</span>`;
+        ? `<span class="status contacted" style="background: #eef4f2; color: #2f5d50;">✔ Contacted</span>`
+        : `<span class="status pending" style="background: #e3f2fd; color: #1976d2;">Pending</span>`;
 
       const actionButton = item.status === "Pending"
-        ? `<button onclick="markContacted('${item._id}')" class="mark-btn">Mark Contacted</button>`
+        ? `<button onclick="markContacted('${item.id}')" class="mark-btn" style="background: #2f5d50;">Mark Contacted</button>`
         : "";
+
       const row = `
           <tr>
-            <td>${item.name}</td>
-            <td>${item.email}</td>
-            <td>${item.phone}</td>
-            <td>${item.message}</td>
-            <td>${item.status}</td>
-            <td>${new Date(item.createdAt).toLocaleString()}</td>
-            <td>
-            <button onclick="deleteEnquiry('${item._id}')">
-              Delete
-            </button>
+            <td>${item.name || 'N/A'}</td>
+            <td>${item.email || 'N/A'}</td>
+            <td>${item.phone || 'N/A'}</td>
+            <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.message || 'N/A'}</td>
+            <td>${statusBadge}</td>
+            <td>${item.createdAt ? new Date(item.createdAt).toLocaleString() : 'N/A'}</td>
+            <td style="display: flex; gap: 5px;">
+              ${actionButton}
+              <button onclick="deleteEnquiry('${item.id}')" class="mark-btn" style="background: #e74c3c;">Delete</button>
+            </td>
           </tr>
         `;
       table.innerHTML += row;
@@ -803,27 +810,22 @@ async function loadEnquiries() {
 }
 window.deleteEnquiry = async function (id) {
   try {
-    const response = await fetch(
-      `https://rsh-backend-production.up.railway.app/enquiry/${id}`,
-      {
-        method: "DELETE"
-      }
-    );
-
-    const result = await response.json();
-    console.log(result);
-
-    loadEnquiries();
-
+    if (confirm("Are you sure you want to delete this enquiry?")) {
+      await deleteDoc(doc(db, "enquiries", id));
+      loadEnquiries();
+    }
   } catch (error) {
     console.error("Delete error:", error);
   }
 }
+
 window.markContacted = async function (id) {
-  await fetch(`https://rsh-backend-production.up.railway.app/enquiry/${id}`, {
-    method: "PUT"
-  });
-  loadEnquiries();
+  try {
+    await setDoc(doc(db, "enquiries", id), { status: "Contacted" }, { merge: true });
+    loadEnquiries();
+  } catch (error) {
+    console.error("Mark contacted error:", error);
+  }
 }
 
 async function loadReviews() {

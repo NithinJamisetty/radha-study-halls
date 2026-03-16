@@ -153,21 +153,18 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       try {
-        const response = await fetch("YOUR_BACKEND_API_URL/enquiry", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
+        const enquiryId = "ENQ-" + Date.now();
+        await setDoc(doc(db, "enquiries", enquiryId), {
+          ...data,
+          status: "Pending",
+          createdAt: new Date().toISOString()
         });
 
-        if (response.ok) {
-          document.getElementById("enquirySuccessModal").style.display = "flex";
-          enquiryForm.reset();
-        } else {
-          alert("Submission failed. Please try again.");
-        }
+        document.getElementById("enquirySuccessModal").style.display = "flex";
+        enquiryForm.reset();
       } catch (error) {
         console.error("Enquiry Error:", error);
-        alert("Server error. Please try again later.");
+        alert("Submission failed. Please try again.");
       } finally {
         btn.textContent = originalText;
         btn.disabled = false;
