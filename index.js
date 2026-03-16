@@ -2,13 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, doc, setDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBBYbyBDdr7A9vNPIHjh7S2waEhTpCTdIY",
-  authDomain: "radha-study-halls.firebaseapp.com",
-  projectId: "radha-study-halls",
-  storageBucket: "radha-study-halls.firebasestorage.app",
-  messagingSenderId: "38343553963",
-  appId: "1:38343553963:web:fcbc614aaa081f1e0d58ee",
-  measurementId: "G-BZLBHFML74"
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "your-project-id.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project-id.firebasestorage.app",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       try {
-        const response = await fetch("https://rsh-backend-production.up.railway.app/enquiry", {
+        const response = await fetch("YOUR_BACKEND_API_URL/enquiry", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)

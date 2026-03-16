@@ -29,10 +29,10 @@ The project uses MongoDB to store student records and seat management data.
 
 The code is optimized to be pushed to your own GitHub repository.
 
-- **Current Repository:** [I will provide the link once created]
+- **Current Repository:** [https://github.com/NithinJamisetty/radha-study-halls](https://github.com/NithinJamisetty/radha-study-halls)
 - **Push Instructions:**
   ```bash
-  git remote add origin YOUR_GITHUB_REPO_URL
+  git remote add origin https://github.com/NithinJamisetty/radha-study-halls.git
   git push -u origin main
   ```
 
